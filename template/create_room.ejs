@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create room</title>
+    <link rel="stylesheet" href="/static/css/create_room.css">
+</head>
+<body>
+    <form action="/livekit/create_room" method="POST">
+        <div class="main_container">
+        
+        <div class="heading">
+            Create your own room
+        </div>
+
+        <div class="room_name_container">
+            <div class="heading_roomName">Your room name</div>
+            <input placeholder="room name" class="room_name" name="room_name">
+        </div>
+
+        <details class="room_options_container">
+            <summary class="options_header">Default room settings</summary>
+            <div class="options_container">
+                <div class="option">
+                    can publish <input type="checkbox" onchange="checkbox_change('can_publish_value')">
+                    <input name="can_publish_value" value=false hidden>
+                </div>
+
+                
+                <div class="option">
+                    can subscribe <input type="checkbox" onchange="checkbox_change('can_subscribe_value')">
+                    <input name="can_subscribe_value" value=false hidden>
+                </div>
+
+
+
+                <div class="option">
+                <details>
+                        <summary>can publish source</summary>
+                    <div class="option_source">
+                        Camera <input type="checkbox" onchange="checkbox_change('camera_source_value')">
+                        <input name="camera_source_value" value=false hidden>
+                    </div>
+                    
+                    <div class="option_source">
+                        Microphone <input type="checkbox" onchange="checkbox_change('microphone_source_value')">
+                        <input name="microphone_source_value" value=false hidden>
+                    </div>
+
+                    <div class="option_source">
+                        Screen share <input type="checkbox" onchange="checkbox_change('screen_share_source_value')">
+                        <input name="screen_share_source_value" value=false hidden>
+                    </div>
+                </details>
+                </div>
+
+
+            </div>
+        </details>
+
+        <button class="submit_button" type="submit">create room</button>
+        </div>
+    </form>
+
+
+    <script src="/static/script/create_room.js"></script>
+</body>
+</html>

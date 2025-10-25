@@ -28,10 +28,14 @@ async function bootstrap() {
     credentials: true
   })
 
-  app.use(helmet())
+
+  
+
+
+
   app.use(rateLimit({
     windowMs: 5 * 60 * 1000, // 5 минут
-    max: 30,
+    max: 300,
     legacyHeaders: false
 
   }))
